@@ -1,0 +1,41 @@
+.questions-page{
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  .question-item{
+    padding: 1rem;
+    .title{
+      color: #8e8a66;
+      font-size: .7rem;
+      margin-bottom: 1rem;
+    }
+    ul{
+      li{
+        border-bottom: 1px solid #38363b;
+        padding: 1rem 0 .5rem;
+        position: relative;
+        > div{
+          position: relative;
+          > span{
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+          p{
+            margin: 0 1rem;
+          }
+        }
+        img{
+          position: absolute;
+          width: .8rem;
+          right: 0;
+          top: 1rem;
+        }
+      }
+    }
+  }
+  .index{
+    color: #8e8a66;
+    margin: 1rem;
+  }
+}

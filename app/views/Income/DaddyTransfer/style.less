@@ -1,0 +1,120 @@
+@import "../../../css/size";
+@import "../../../css/color";
+.pay-container{
+  line-height:2;
+  .label{
+    font-size:.65rem;
+  }
+  .desc{
+    font-size:.6rem;
+  }
+  .money{
+    font-size:1rem;
+    .unit{
+      margin-right:.25rem;
+    }
+  }
+
+  .clear{
+    clear: both;
+  }
+  .content{
+    margin-top:3rem;
+    width: 100%;
+  }
+
+  .text_item{
+    width:100%;
+    height:1.6rem;
+    line-height:1.2rem;
+  }
+
+  .label_text{
+    float:left;
+    font-size: 0.9rem;
+    width:32%;
+    height:1.6rem;
+    text-align: right;
+  }
+  .content_text{
+    float:left;
+    font-size: 0.9rem;
+    color: #da313f;
+    width:45%;
+    height:1.6rem;
+    line-height: 1.6rem;
+    margin-left:0.5rem;
+  }
+  .past{
+    float:right;
+    font-size:1rem;
+    margin-right:10px;
+    height:1.2rem;
+  }
+
+  .input-container{
+    position:relative;
+    line-height:1.2rem;
+    font-size:.6rem;
+    .icon{
+     height:.75rem;
+    }
+    .pull-right{
+      position:absolute;
+      right:@side-margin;
+      top:.5rem;
+      background:@app-bar-background;
+      text-align:right;
+    }
+    label{
+      display:inline-block;
+      width:3rem;
+      position:absolute;
+    }
+    input{
+      padding:0;
+      background:transparent;
+      border:none;
+      outline:none;
+      width:100%;
+      line-height:1rem;
+      color:#fff;
+      text-indent:3.5rem;
+      font-size:.6rem;
+    }
+    .btn-verify,.timer{
+      width:3rem;
+      text-align:center;
+    }
+    .btn-verify{
+      background:@color-red;
+      border-radius:.15rem;
+    }
+    .timer{
+      border-left:1px solid @border-color;
+      .second-unit{
+        display:inline-block;
+        transform:scale(.8);
+        vertical-align:top;
+        position:relative;
+        top:-.1rem;
+      }
+    }
+  }
+}
+
+.notice-container{
+  text-align: left;
+  padding-left:1rem;
+  width: 100%;
+  display: inline-block;
+  h6,p{
+    font-size:.6rem;
+  }
+  h6{
+    color:@color-red;
+  }
+  p{
+    color:@secondary-font-color;
+  }
+}

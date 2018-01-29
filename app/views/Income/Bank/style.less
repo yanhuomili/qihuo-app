@@ -1,0 +1,82 @@
+@import "../../../css/size";
+@import "../../../css/color";
+.banks{
+  @img-size:2.2rem;
+  padding:.5rem 0;
+  position:relative;
+  background: @app-bar-background;
+  .bank-type{
+    @light-dark-border-color:#353535;
+    display:-webkit-box;
+    display:flex;
+    border-top:.05rem solid @light-dark-border-color;
+    li{
+      padding-top:.5rem;
+      -webkit-box-flex:1;
+      flex:1;
+      text-align:center;
+      line-height:3rem;
+      border-right:1px solid @light-dark-border-color;
+      &:last-child{
+        border-right:none;
+      }
+    }
+  }
+  .bank-image{
+    position:absolute;
+    left:@side-margin;
+    top:.55rem;
+    background:#fff;
+    border-radius:50%;
+    height:@img-size;
+    width:@img-size;
+    img{
+      height:@img-size - .2rem;
+      width:@img-size - .2rem;
+      display:inline-block;
+      margin:.1rem .1rem;
+      border-radius:50%;
+    }
+  }
+  .bank-info{
+    margin-left:@side-margin*2 + @img-size;
+    position:relative;
+    .bank-name{
+      font-size:.8rem;
+    }
+    .bank-info-top{
+      font-size:.8rem;
+      line-height:1.5rem;
+      height:1.5rem;
+    }
+    .bank-tail-num{
+      color:@secondary-font-color;
+    }
+    .bank-limited{
+      line-height:1rem;
+      color:@secondary-font-color;
+      font-size:.7rem;
+      height:1rem;
+    }
+    .icon-svg{
+      position:absolute;
+      fill:#fff;
+      top:.75rem;
+      right:@side-margin;
+      height:.7rem;
+    }
+  }
+  &.disabled{
+    position:relative;
+    &:after{
+      content:"";
+      position:absolute;
+      height:100%;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:2;
+      background:rgba(33,33,33,.7);
+    }
+  }
+}

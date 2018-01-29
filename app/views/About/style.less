@@ -1,0 +1,43 @@
+@import "../../css/color";
+@import "../../css/size";
+.about {
+  margin-top: .5rem;
+  .about-symbol {
+    text-align: center;
+    margin-top: @about-version-height;
+    margin-bottom: .5rem;
+    > img {
+      max-width: @about-img-width;
+    }
+  }
+  .about-version {
+    color: @about-version-color;
+    text-align: center;
+    margin-bottom: @about-version-height;
+    > span {
+      display: inline-block;
+      border: .05rem solid @about-version-color;
+      border-radius: .3rem;
+      padding: .1rem .6rem;
+    }
+  }
+  .about-list {
+    background: @about-background;
+    padding: 0 1rem;
+  }
+  .about-describe {
+    text-align: center;
+    color: @about-describe-color;
+    position: absolute;
+    bottom: 1rem;
+    font-size: .6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    > span {
+      display: block;
+      &:last-of-type {
+        font-size: .5rem;
+      }
+    }
+  }
+}

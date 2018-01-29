@@ -1,0 +1,83 @@
+.subUser {
+  color: #a1a1a1;
+  padding:1.5rem .5rem;
+  //.table{
+  //  width:100%;
+  //  .align-left{
+  //    text-align: left;
+  //  }
+  //  thead{
+  //    line-height: 2.5rem;
+  //  }
+  //  tbody{
+  //    tr{
+  //      &:nth-child(even){
+  //        background:#26252a;
+  //      }
+  //    }
+  //    td{
+  //      padding: .5rem .25rem;
+  //    }
+  //    tr{
+  //      border: .05rem solid #a1a1a1;
+  //    }
+  //    .loading{
+  //      text-align: center;
+  //      line-height: 1.5rem;
+  //    }
+  //  }
+  //  .time{
+  //    text-indent: .5rem;
+  //  }
+  //  .align-center{
+  //    text-align: center;
+  //  }
+  //}
+  .table{
+    width: 100%;
+    .align-left{
+      text-align: left;
+    }
+    thead{
+      line-height: 2.5rem;
+    }
+    tbody{
+      .loading{
+        text-align: center;
+      }
+      tr{
+        &:not(:first-child){
+          border-top: none;
+        }
+        td{
+          border: 1px solid #333;
+          &:not(:last-child){
+            border-right: none;
+          }
+          &:not(:first-child){
+            border-left:none;
+          }
+        }
+        &:nth-child(even){
+          background: #26252a;
+        }
+      }
+      td{
+        padding: .5rem .25rem;
+      }
+      .detail_time,.user_name{
+        width:3.5rem;
+      }
+
+      .hands{
+        text-align: center;
+      }
+    }
+    .time{
+      text-indent: .5rem;
+    }
+    .align-center{
+      text-align: center;
+    }
+  }
+}

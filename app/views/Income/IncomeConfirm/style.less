@@ -1,0 +1,54 @@
+@import "../../../css/color";
+@dark-khaki:#ebc983;
+.income-confirm{
+  .modal-wrapper{
+    margin-top:-9rem;
+    .modal-msg{
+      padding:1rem;
+    }
+  }
+  .close-wrapper{
+    position:absolute;
+    right:.5rem;
+    top:.5rem;
+    .icon-svg{
+      height:.7rem;
+      width:.7rem;
+      color:@dark-khaki;
+    }
+  }
+  .income-confirm-content{
+    padding:0rem;
+    font-size:.8rem;
+    li{
+      border-top:1px solid @border-color;
+      padding:.5rem 0;
+      &.first-row{
+        border-top:none;
+        color:@dark-khaki;
+        .icon-svg{
+          color:@dark-khaki;
+          height:2rem;
+          width:2rem;
+          margin-bottom:.5rem;
+        }
+      }
+      h3{
+        color:@very-light-brown;
+      }
+      .desc{
+        font-size:.6rem;
+        padding:1rem 0 0;
+      }
+    }
+  }
+  .button-container{
+    li{
+      border:1px solid @dark-khaki;
+    }
+    li:first-child{
+      background:transparent;
+      color:@dark-khaki;
+    }
+  }
+}

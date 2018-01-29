@@ -1,0 +1,65 @@
+@import "../../css/color";
+@import "../../css/size";
+
+.app-bar-container {
+  .app-bar {
+    position:relative;
+    background: @app-bar-background;
+    height: @app-bar-height;
+    color: #fff;
+    &.background-transparent {
+      background: transparent;
+    }
+    .title {
+      position: absolute;
+      width: 100%;
+      z-index: 0;
+      color: #fff;
+      font-size: .7rem;
+      font-weight: normal;
+      text-align: center;
+      line-height: @app-bar-height;
+    }
+    .titleChange {
+      position: absolute;
+      width: 100%;
+      z-index: 0;
+      color: #fff;
+      font-size: .5rem;
+      font-weight: normal;
+      text-align: center;
+      line-height: @app-bar-height;
+    }
+    .icon {
+      color: #fff;
+      fill: #fff;
+      height:.7rem;
+      width:.7rem;
+      vertical-align: middle;
+      margin-right: .2rem;
+    }
+    .bar-icon {
+      position: relative;
+      z-index: 2;
+      line-height: @app-bar-height;
+      text-align: center;
+      padding: 0 .5rem;
+      font-size: .6rem;
+      span{
+        vertical-align: middle;
+      }
+    }
+  }
+  &.fixed {
+    .app-bar{
+      position:absolute;
+      width:100%;
+      z-index:9;
+      top:0;
+      left:0;
+    }
+    .substitute{
+     height:@app-bar-height;
+    }
+  }
+}

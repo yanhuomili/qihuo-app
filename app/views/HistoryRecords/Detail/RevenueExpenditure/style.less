@@ -1,0 +1,53 @@
+@import "../../../../css/color";
+.revenue-detail{
+  color: @secondary-font-color;
+  padding: .5rem 0 0 .8rem;
+}
+.revenue-expenditure {
+  .load-more{
+    text-align:center;
+    line-height:2rem;
+  }
+  .empty-list{
+    line-height:2rem;
+    text-align:center;
+    color:@color-gold;
+  }
+  .clear-fix {
+    border-bottom: .05rem solid #b2b2b2;
+    border-top: .05rem solid #b2b2b2;
+    &:not(:last-of-type){
+      border-bottom: none;
+    }
+  }
+}
+.revenue-expenditure-item{
+  position:relative;
+  .text-center {
+    text-align: center;
+    color: @revenue-font-color;
+    line-height:2.5rem;
+  }
+  .pull-left{
+    position:absolute;
+    top:0;
+    left:0;
+    line-height:.9rem;
+    padding-top:.3rem;
+    padding-left:.25rem;
+  }
+  .pull-right{
+    position:absolute;
+    top:0;
+    right:0;
+    padding-right:.25rem;
+    font-size: .8rem;
+    line-height:2.5rem;
+    &.up{
+      color:@color-red;
+    }
+    &.down{
+      color:@color-green;
+    }
+  }
+}

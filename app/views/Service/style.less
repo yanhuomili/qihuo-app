@@ -1,0 +1,81 @@
+.customer-service{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url('./images/bg.jpg') no-repeat;
+  background-size: cover;
+  > p{
+    text-align: center;
+    color: rgb(144,133,93);
+    font-size: .8rem;
+    margin: 0 0 .4rem;
+  }
+  > p:first-child{
+    margin-top: 3rem;
+  }
+  .bottom{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    .qqText{
+      color: rgb(144,133,93);
+      font-size: .8rem;
+      margin: .5rem 0 .2rem;
+    }
+    .timeText{
+      color: grey;
+      margin: 0 0 1.5rem;
+    }
+    .btn{
+      font-size: .8rem;
+    }
+  }
+}
+.dialog-wrapper{
+  position:fixed;
+  background:rgba(0,0,0,0.2);
+  z-index:999;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  .dialog-content{
+    background:#26252A;
+    text-align:center;
+    position:absolute;
+    width:80%;
+    left:10%;
+    top:50%;
+    margin-top:-8rem;
+    border:1px solid grey;
+    border-radius:.4rem;
+    .inner-wrapper{
+      padding:1rem;
+    }
+    .btn{
+      font-size:.8rem;
+    }
+    .row-1,.row-3{
+      color:rgb(148,133,93);
+      font-size:.7rem;
+      margin:1.5rem 0 .5rem 0;
+    }
+    .row-2,.row-4{
+      color:grey;
+      margin-top:.5rem;
+    }
+    .close-wrapper{
+      position:absolute;
+      right:.5rem;
+      top:.5rem;
+      .icon{
+        height:1rem;
+        width:1rem;
+      }
+    }
+  }
+}

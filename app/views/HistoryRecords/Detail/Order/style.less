@@ -1,0 +1,92 @@
+@import "../../../../css/color";
+@import "../../../../css/size";
+
+@radius: .25rem;
+.order-item {
+  margin-top:.5rem;
+  .top-wrapper, .bottom-wrapper {
+    border: 1px solid @dark-border-color;
+  }
+  .top-wrapper {
+    border-top-left-radius: @radius;
+    border-top-right-radius: @radius;
+    padding:@side-margin;
+    .count-wrapper{
+      margin-top:.25rem;
+      line-height:.8rem;
+      .count{
+        margin-left:.25rem;
+      }
+    }
+    .pull-right{
+      text-align:right;
+      &.up{
+        color:@color-red;
+      }
+      &.down{
+        color:@color-green;
+      }
+      .dollar{
+        font-size:.8rem;
+        line-height:1.35rem;
+        .unit{
+          font-size:.6rem;
+          margin-left:.15rem;
+        }
+      }
+      .percent{
+        font-size:.6rem;
+        line-height:1rem;
+      }
+    }
+  }
+  .bottom-wrapper {
+    margin-top: .25rem;
+    padding: .1rem;
+    background: @app-bar-background;
+    border-bottom-left-radius: @radius;
+    border-bottom-right-radius: @radius;
+    line-height: 1.2rem;
+    .status {
+      margin-right: .25rem;
+    }
+    .icon-svg {
+      color: @color-gold;
+      height: 1.2rem;
+      width: 1.2rem;
+    }
+    .pull-right {
+      color: @secondary-font-color;
+    }
+  }
+}
+
+.status {
+  border: 1px solid @color-red;
+  display: inline-block;
+  border-radius: 50%;
+  @size: .8rem;
+  height: @size;
+  width: @size;
+  text-align: center;
+  line-height: @size;
+  &.status-up {
+    border-color: @color-red;
+    color: @color-red;
+  }
+  &.status-down {
+    border-color: @color-green;
+    color: @color-green;
+  }
+}
+.order-list{
+  .empty-list{
+    line-height:2rem;
+    text-align:center;
+    color:@color-gold;
+  }
+  .load-more{
+    text-align:center;
+    line-height:2rem;
+  }
+}

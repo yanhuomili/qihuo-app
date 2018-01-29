@@ -1,0 +1,148 @@
+@import "../../css/color";
+@import "../../css/size";
+.wechat-qr-code{
+  .description{
+    margin-top:.75rem;
+    margin-bottom:-1rem;
+    text-align:left;
+  }
+  .title{
+    margin-bottom:.5rem;
+  }
+}
+.ns-income{
+  .banks-selector{
+    margin-top:1rem;
+  }
+  .ping-an-selector-container{
+    background:@app-bar-background;
+    margin-top:.5rem;
+    padding:.25rem @side-margin .5rem;
+    .title{
+      line-height:1rem;
+    }
+    .ping-an-selector-item{
+      border:1px solid @border-color;
+      margin-top:.25rem;
+      line-height:1.5rem;
+      text-indent:.25rem;
+      position:relative;
+      border-radius:.2rem;
+      &.active{
+        border-color:@color-gold;
+        background:url(./images/selected.png) no-repeat right bottom;
+        background-size:1.1rem .8rem;
+      }
+      .rny{
+        display:inline-block;
+        width:5rem;
+      }
+      .dollar{
+        color:@dark-font-color;
+      }
+    }
+  }
+  .rate{
+    color:@color-gold;
+    line-height:2rem;
+    margin-top:.5rem;
+    text-indent:@side-margin;
+  }
+  .income-limit{
+    background:@app-bar-background;
+    position:relative;
+    padding-top:.5rem;
+    margin-top:.5rem;
+    .income-limit-label{
+      line-height:1.2rem;
+      margin-left:@side-margin;
+    }
+    @box-height:1.6rem;
+    @font-size:1rem;
+    .input-box{
+      position:relative;
+      line-height:@box-height;
+      font-size:@font-size;
+      vertical-align:middle;
+      border-bottom:1px solid @border-color;
+      input{
+        vertical-align:baseline;
+        font-size:@font-size;
+        padding:0;
+        background:transparent;
+        border:none;
+        line-height:@box-height;
+        color:@primary-font-color;
+        outline:none;
+        border-radius:0;
+        margin-left:.25rem;
+        width:12rem;
+      }
+      .unit{
+        line-height:@box-height;
+        color:@secondary-font-color;
+        margin-left:@side-margin;
+      }
+    }
+    .related-rny{
+      line-height:1.6rem;
+      margin-left:@side-margin;
+      color:@secondary-font-color;
+    }
+  }
+  .button-container{
+    margin:1rem 0;
+    text-align:center;
+  }
+  .modal-wrapper .button-container{
+    margin:0;
+  }
+  .notice-container{
+    padding:@side-margin;
+    h6,p{
+      font-size:.6rem;
+    }
+    h6{
+      color:@color-red;
+    }
+    p{
+      color:@secondary-font-color;
+    }
+  }
+  .service-link{
+    color:@color-blue;
+  }
+  .support-bank{
+    color:@color-blue;
+  }
+}
+.alipay-account{
+  margin-top:.5rem;
+  background:@app-bar-background;
+  .label{
+    display:block;
+    padding-top:.5rem;
+    line-height:1.2rem;
+    vertical-align:middle;
+    margin-left:@side-margin;
+  }
+  .txt-account-wrapper{
+    border-bottom:1px solid @border-color;
+  }
+  .txt-account{
+    width:12rem;
+    line-height:2rem;
+    background:transparent;
+    border:none;
+    margin-left:@side-margin;
+    font-size:1rem;
+    color:#fff;
+    vertical-align:middle;
+    outline:none;
+  }
+  .description{
+   color:@secondary-font-color;
+    margin-left:@side-margin;
+    line-height:1.5rem;
+  }
+}

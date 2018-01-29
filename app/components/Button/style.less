@@ -1,0 +1,26 @@
+@import "../../css/color";
+@btn-height:2.25rem;
+@btn-disabled-border-color:#36353a;
+.btn{
+  text-align:center;
+  line-height:@btn-height;
+  background:@light-color-red;
+  margin:0 5%;
+  border-radius:@btn-height / 2;
+  border:.05rem solid @light-color-red;
+  &.disabled{
+    background:@app-bar-background;
+    border-color:@btn-disabled-border-color;
+    color:@secondary-font-color;
+  }
+  .icon-svg{
+    color:#fff;
+    margin-right:.25rem;
+    height:1rem;
+    width:1rem;
+    vertical-align:middle;
+  }
+  span{
+    vertical-align:middle;
+  }
+}

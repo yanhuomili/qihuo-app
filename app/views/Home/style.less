@@ -1,0 +1,49 @@
+.account-center{
+  .top{
+    background: url('./images/acc_bg.png') no-repeat;
+    background-size: cover;
+    p{
+      text-align: center;
+      color: #fff;
+      margin: 0;
+    }
+    .num-text{
+      color: #dbdede;
+      margin: .4rem 0 .1rem;
+      font-size: .5rem;
+    }
+    .num{
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+    }
+    .in-out{
+      > div{
+        display: inline-block;
+        position: relative;
+        width: 50%;
+        text-align: center;
+        margin-bottom: 1rem;
+        img{
+          width: 1.4rem;
+        }
+        p{
+          font-size: .8rem;
+          margin: .1rem;
+        }
+      }
+      > div:first-child:after{
+        content:'';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        border-left: 1px solid #cbcbcb;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+  .items{
+    color: #fff;
+    padding: .5rem 0;
+  }
+}
