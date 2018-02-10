@@ -3,9 +3,9 @@
   padding: .6rem .5rem;
   position: relative;
   > div{
-    margin-right: 6rem;
+//  margin-right: 6rem;
     .title{
-      color: #e73d57;
+      color: #333;
       font-size: .9rem;
     }
     .newHand-task{
@@ -24,13 +24,34 @@
     .remark{
       margin-top: .1rem;
       font-size: .7rem;
-      color: #9f9e9f;
+      color: #f17247;
     }
   }
-  > img{
-    width: 4.5rem;
+//> img{
+//  width: 4.5rem;
+//  position: absolute;
+//  right: .5rem;
+//  top: .5rem;
+//}
+  .is-get{
+//  width: 4.5rem;
+    height: 100%;
+    line-height: 85px;
     position: absolute;
-    right: .5rem;
-    top: .5rem;
+    right: 10px;
+    top: 0;
+    padding-right: 25px;
+  }
+  .is-get:after{
+      content: "";
+      width: 10px;
+      height: 10px;
+      border: 1px solid transparent;
+      border-bottom-color:#ccc ;
+      border-right-color: #ccc;
+      transform: rotateZ(-45deg);
+      position: absolute;
+      right: 10px;
+      top: 35px;
   }
 }

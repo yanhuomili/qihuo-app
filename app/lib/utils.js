@@ -173,7 +173,7 @@ const getQueryString = (name) => {
 };
 //跳转到原生APP
 export const backToApp = (checkOrigin) => {
-    let type = getQueryString("type");
+    let type = getQueryString("type");//获取到original
     if (isiOS && ( !checkOrigin || type == "original")) {
         window.location.href = 'goBack://last';
     } else if (isAndroid && (!checkOrigin || type == "original")) {

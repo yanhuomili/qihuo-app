@@ -1,0 +1,134 @@
+.my-head-img{
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    .img-box{
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        margin-bottom: .5rem;
+        background: #f60;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.dl-list{
+  width: 100%;
+  background: #f1f1f1;
+  dt{
+      width: 100%;
+      padding: .7rem 1.5rem .7rem .7rem;
+      box-sizing: border-box;
+      position: relative;
+      border-bottom: 1px solid #eee;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items:center; 
+      &.repair-pw{
+          border-bottom:none ;
+          margin-bottom: 1rem;
+      }
+      &:last-child{
+          border-bottom:none ;
+          margin-bottom: 1rem;
+      }
+      &:after{
+          content: "";
+              width:.5rem;
+              height: .5rem;
+              border: 1px solid transparent;
+              border-bottom-color: #ccc;
+              border-right-color: #ccc;
+              position: absolute;
+              right: .8rem;
+              top: 50%;
+              transform: translateY(-50%) rotate(-45deg);
+          }
+          p{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: .7rem;
+            input{
+                width: auto;
+                border: none;
+                outline: 0 none;
+                padding: 0 .5rem;
+                text-align: right;
+            }
+          }
+          img{
+              width: 1rem;
+              height: 1rem;
+              margin-right: .5rem;
+              background: #ccc;
+          }
+          
+          
+      }
+  }
+.nickname-mask,.modify-password{ 
+    width: 100%; 
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    .personal-dialog{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        >div{
+            width: 70%;
+            padding: 3rem 1.5rem;
+            box-sizing: border-box;
+            background: #fff;
+            input{
+                width: 100%;
+                height: 2rem;
+                border: 1px solid #ccc;
+                outline: 0 none;
+                margin-bottom: 1rem;
+                text-indent: 10px;
+            }
+            button{
+                width: 100%;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                background: #6cb6f8;
+                color: #fff;
+                border: none;
+                outline: 0 none;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+//二维码
+.qr-code-wrap{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .qrCode{
+        padding: 4rem 3rem 3rem 4rem;
+        background: #fff;
+    }
+}

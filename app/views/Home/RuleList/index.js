@@ -9,7 +9,7 @@ export default class RuleList extends React.Component {
         return (
             <Container>
                 <div className="rule-list">
-                    <AppBar title="法律条款" backward />
+                    <div className="add-border"><AppBar title="法律条款" backward /></div>
                     <div className="lists">
                         <ListItem img={ Img } greyBg={ true } label="服务条款" value="已签署" url='/rule/service' />
                         <ListItem img={ Img } greyBg={ true } label="免责声明" value="已签署" url='/rule/statement' />

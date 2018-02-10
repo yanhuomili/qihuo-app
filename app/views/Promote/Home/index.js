@@ -96,9 +96,17 @@ export default class Home extends Component {
         const disabled = !( cash >= 10);
         return (
             <div className="promote-container">
+            		<div className="share-container">
+                    <div><img src={ this.getQrCode() }/></div>
+                    <div>推荐朋友扫码，成为你的用户</div>
+                    <div> 选择复制链接分享给好友</div>
+                    <div className="link"
+                         onClick={ this.copy.bind(this) }> { qrCode.shareUrl } </div>
+                </div>
                 <div className="cash-fund clear-fix">
+               		<div className="label">我的等级{/*<span className="my-rank">铜牌会员</span>*/}</div>
                     <div className="cash-fund-left">
-                        <div className="label">可提现金额</div>
+                        
                         <div className="num">{ cash.toFixed(2)}</div>
                     </div>
                     <div className="cash-fund-right">
@@ -133,13 +141,7 @@ export default class Home extends Component {
                         <div>{ detail.firstHandCount }</div>
                     </li>
                 </ul>
-                <div className="share-container">
-                    <div><img src={ this.getQrCode() }/></div>
-                    <div>推荐朋友扫码，成为你的用户</div>
-                    <div> 选择复制链接分享给好友</div>
-                    <div className="link"
-                         onClick={ this.copy.bind(this) }> { qrCode.shareUrl } </div>
-                </div>
+                
             </div>
         )
     }

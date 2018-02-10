@@ -70,7 +70,6 @@ let runOne = null;
 
 @autobind
 export class Income extends React.Component {
-
     constructor() {
         super();
         this.state = {
@@ -166,7 +165,7 @@ export class Income extends React.Component {
             this.props.setAlipayAccount(alipayAccount);
             this.props.setAlipayAddress(alipayAddress);
         }
-        console.log(channel);
+        console.log(channel,alipayAccount,alipayAddress);
         this.props.setThirdOptCode(channel);
         redirect("/income/alipay");
         /*
@@ -352,7 +351,7 @@ export class Income extends React.Component {
             thirdOptCode: channel
         }, (resp) => {
            // const {bank_acc_name,bank_card_num, note, amount, issuing_bank_address} = resp;
-            console.log(resp);
+//          console.log(resp);
             this.props.setChannel(resp);
             redirect("/income/daddytransfer");
         });
@@ -471,6 +470,7 @@ export class Income extends React.Component {
     render() {
         const {rate, income, bank, pingAn, alipay, incomeDollar, limit} = this.props;
         const disabled = this.getDisabledStatus();
+        const hasImg=false;
         return (
             <Container
                 className="ns-income"
@@ -484,7 +484,8 @@ export class Income extends React.Component {
                     this.props.showBanksList();
                 }}
                      className="banks-selector">
-                    <Bank data={bank || {}} showArrow/>
+                     <div className="pay-way">支付方式</div>
+                    <Bank data={bank || {}} showArrow hasImg/>
                 </div>
                 <IncomeInput
                     onChange={this.updateIncome}

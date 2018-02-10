@@ -98,7 +98,7 @@ export class Banks extends React.Component {
         const {showBanksSelect} = this.props;
         return (
             showBanksSelect ?
-                <BottomSlider title="选择入金方式"
+                <BottomSlider title="选择银行卡"
                               onClose={ this.props.hideBanksList }>
                     <AjaxLoader config={ USER_CHARGE_BANK_LIST }
                                 content={ ConnectedAjaxContent } responseHandler={ resp => {

@@ -12,7 +12,30 @@
 }
 .ns-income{
   .banks-selector{
-    margin-top:1rem;
+      position: relative;
+      .pay-way{
+          position: absolute;
+          top: 1.5rem;
+          left: .5rem;
+          z-index: 999;
+          font-size: .7rem;
+      }
+    .otherbank{
+        width: 85%;
+        transform: translateX(15%);
+//      margin: 1rem auto;
+//      padding: 1rem 0;
+//      background: #f0596b;
+//      border-radius: .5rem;
+        .bank-info-top{
+            span{
+//              color: #fff !important;
+            }
+        }
+        .bank-limited{
+//          color: #fff !important;
+        }
+    }
   }
   .ping-an-selector-container{
     background:@app-bar-background;
@@ -72,11 +95,16 @@
         background:transparent;
         border:none;
         line-height:@box-height;
-        color:@primary-font-color;
+        color:#333;
         outline:none;
         border-radius:0;
         margin-left:.25rem;
         width:12rem;
+      }
+      .input{
+          input{
+              color: #333;
+          }
       }
       .unit{
         line-height:@box-height;
@@ -99,8 +127,10 @@
   }
   .notice-container{
     padding:@side-margin;
+    box-sizing: border-box;
     h6,p{
       font-size:.6rem;
+      line-height: 1.6;
     }
     h6{
       color:@color-red;
@@ -146,3 +176,5 @@
     line-height:1.5rem;
   }
 }
+
+

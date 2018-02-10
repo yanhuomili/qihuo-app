@@ -12,30 +12,97 @@ import ListImg1 from './images/acc_5.png';
 import ListImg2 from './images/acc_6.png';
 import ListImg3 from './images/acc_7.png';
 import ListImg4 from './images/acc_8.png';
+
+import picMoney from './images/my-money.png';
+import picScore from './images/my-score.png';
+import picRenzheng from './images/my-renzheng.png';
+import picZijin from './images/my-zijin.png';
+import picTuiguang from './images/my-tuiguang.png';
+import picRenwu from './images/my-renwu.png';
+import picAbout from './images/my-about.png';
+import picTuiguangma from './images/my-tuiguangma.png';
+import picServer from './images/my-server.png';
+
+
 import { openWithDraw,backToApp,redirect,sliceNumber } from 'lib/utils';
-import Api,{ ACCOUNT_INFO } from 'lib/api';
+import Api,{MY, ACCOUNT_INFO,NICK_HEAD } from 'lib/api';
 import * as actionCreators from '../Income/actions';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
+import $ from 'jquery';
 export class Home extends React.Component {
     constructor(){
         super();
         this.state = {
             data: {},
+            arr:[],
+            nickName:'',
+            headPic:''
+            
         }
+    }
+    
+    
+    //个人资料
+    personal(){
+    	redirect('/my_info');
+    }
+    
+     //认证信息
+    renzheng(){
+    	redirect('/identification');
+    }
+    
+    //资金明细
+    moneyDetail(){
+    	redirect('/fund_detail');
+    }
+    //推广赚钱
+    tuiguang(){
+    	redirect('/promote');
+    }
+    //任务中心
+    renwu(){
+    	redirect('/task_center');
+    }
+    //关于我们
+    guanyu(){
+    	redirect('/about');
     }
     componentWillMount(){
         //路径参数
-        const param = parse(this.props.location.search);
+        const param = parse(this.props.location.search);//将地址栏信息转成对象方便获取字段
         if(param && param.alipayinstall){
             this.props.setAlipayInstalled(param.alipayinstall === 'true');
         }
+        
         //调用接口获取数据
-        Api.fetch(ACCOUNT_INFO,{},(data)=>{
-            this.setState({data:data});
-            this.props.setPingAnAccount(data.tel);
-            this.props.setTel(data.tel);
+//		Api.fetch(ACCOUNT_INFO,{},(data)=>{
+//      	console.log(data)
+//          this.setState({data:data});
+//          this.props.setPingAnAccount(data.tel);
+//          this.props.setTel(data.tel);
+//      });
+
+		//获取头像和昵称
+		Api.fetch(NICK_HEAD,{fundType:0},(data,res)=>{
+        	console.log(data,res);
+        	this.setState({
+        		nickName:data.nickName,
+        		headPic:data.headPic
+        	})
+        	
         });
+		
+		//美元积分和美元
+        Api.fetch(MY,{},(data,res)=>{
+        	console.log(data)
+        	console.log(res)
+        	this.setState({
+        		arr:data
+        	})
+        });
+        console.log(999)
     }
     render() {
         const data = this.state.data;
@@ -43,30 +110,101 @@ export class Home extends React.Component {
             <Container>
                 <div className="account-center">
                     <div className="top">
-                        <AppBar title="实盘账户" backward={ backToApp } rightBar={
-                            { icon:"detail", text:"明细",fnClick:()=>redirect('/fund_detail') }
+                        <AppBar title="我的" backward={ backToApp } rightBar={
+                            { /*icon:"detail", text:"明细",fnClick:()=>redirect('/fund_detail')*/ }
                         }
-                            backgroundTransparent
                         />
-                        <p className="num-text">可用余额</p>
-                        <p className="num">${ sliceNumber(data.balance) }</p>
-                        <div className="in-out">
-                            <div onClick={ openWithDraw }>
-                                <img src={ DrawImg }/>
-                                <p>出金</p>
-                            </div>
-                            <div onClick={ _ => { redirect("/income") }}>
-                                <img src={ SaveImg }/>
-                                <p>入金</p>
-                            </div>
+                        <div className="server-wrap">
+                        	<img src={picServer}/>
+                        	<span>客服</span>
+                        </div>
+                        <div className="bot">
+                        	<dl className="user-head">
+                        		<dt onClick={this.personal}>
+                        		{<img className="user-head-img" src={this.state.headPic} alt="用户头像"/>}
+                        			
+                        		</dt>
+                        		<dd>{this.state.nickName}</dd>
+                        	</dl>
+	                        {/*<p className="num-text">余额<span>美元积分</span></p>
+	                        <p className="num">${ sliceNumber(data.balance) }</p>*/}
+	                        {this.state.arr.length>0
+	                            ?<div className="in-out">
+	                        <div>
+	                            	<div className="money">
+		                            	<img src={ picScore }/>
+		                                <p>余额<span>(美元积分)</span></p>
+	                            	</div>
+	                            	<div className="leftMoney">${this.state.arr[0].amt}</div>
+	                            </div>
+	                            <div>
+	                                {/*<img src={ SaveImg }/>
+	                                <p>入金</p>*/}
+	                                {
+	                                	this.state.arr.length==1?<div className="unLogin">实名认证</div>
+	                                	:<div className="logined">
+	                                	<p>
+	                                		<img src={ picMoney }/>
+	                                		<span>余额  (美元)</span>
+	                                	</p>
+	                                	<p className="login-num">${this.state.arr[1].amt}</p>
+	                                	<dl>
+	                                		<dt onClick={ _ => { redirect("/income") }}>充值</dt>
+	                                		<dd onClick={ openWithDraw }>提现</dd>
+	                                	</dl>
+	                                </div>
+	                                }
+	                            </div>
+	                        </div>:null}
                         </div>
                     </div>
-                    <div className="items">
+                    <dl className="dl-list">
+                    	<dt onClick={this.renzheng}>
+                    		<p>
+                    			<img src={picRenzheng}/>
+                    			<span>实名认证</span>
+                    		</p>
+                    	</dt>
+                    	<dt onClick={this.moneyDetail}>
+                    		<p>
+                    			<img src={picZijin}/>
+                    			<span>资金明细</span>
+                    		</p>
+                    	</dt>
+                    	<dt onClick={this.tuiguang}>
+                    		<p>
+                    			<img src={picTuiguang}/>
+                    			<span>推广赚钱</span>
+                    		</p>
+                    	</dt>
+                    	<dt onClick={this.renwu}>
+                    		<p>
+                    			<img src={picRenwu}/>
+                    			<span>任务中心</span>
+                    		</p>
+                    	</dt>
+                    	<dt onClick={this.guanyu}>
+                    		<p>
+                    			<img src={picTuiguang}/>
+                    			<span>关于我们</span>
+                    		</p>
+                    	</dt>
+                    	<dt>
+                    		<p>
+                    			<img src={picTuiguangma}/>
+                    			<span>我的推广码</span>
+                    		</p>
+                    	</dt>
+                    </dl>
+                    
+                    
+                    
+                    {/*<div className="items">
                         <ListItem img={ ListImg1 } label="手机认证" value={data.tel==undefined ? "" : `${data.tel.substring(0,3)}****${data.tel.substring(7,11)}`} url={`/tel_detail?tel=${data.tel}`} />
                         <ListItem img={ ListImg2 } label="实名认证" value="已认证" url={`/name_detail?name=${data.name}&idCard=${data.idCard}`} />
                         <ListItem img={ ListImg3 } label="银行卡号" value="已认证" url='/bank_detail' />
                         <ListItem img={ ListImg4 } label="法律条款" value="已签署" url='/rule_list' />
-                    </div>
+                    </div>*/}
                 </div>
             </Container>
         )

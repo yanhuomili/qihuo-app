@@ -30,10 +30,10 @@ export default class Bank extends React.Component {
         show:false
     };
     render() {
-        const {data, selected, showArrow, onClick, showChannel} = this.props;
+        const {data, selected, showArrow, onClick, showChannel,hasImg} = this.props;
         const { show } = this.state;
         return (
-            <div className={"banks" + ( data.chargeAmt === 0 ? " disabled":"")}>
+            <div className={"banks otherbank" + ( data.chargeAmt === 0 ? " disabled":"")}>
                 <div onClick={
                     /*
                     ( data.id === PAY_TYPE_ALIPAY || data.id === PAY_TYPE_PINGAN ) ?
@@ -45,7 +45,7 @@ export default class Bank extends React.Component {
                     onClick
                 }>
                     <div className="bank-image">
-                        <img src={ data.bankPic ? protocolTransfer(data.bankPic) : defaultBankImage }/>
+                        {hasImg?null:<img src={ data.bankPic ? protocolTransfer(data.bankPic) : defaultBankImage }/>}
                     </div>
                     <div className="bank-info">
                         <div className="bank-info-top">

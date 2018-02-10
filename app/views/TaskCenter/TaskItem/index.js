@@ -11,14 +11,14 @@ export default class TaskItem extends React.Component {
                         <span className="title">{ title }</span>
                         {
                             msg ?
-                                <span className={ newHandTask ? "newHand-task":"not-newHand-task"}>{ msg }</span>
+                                <span className={ newHandTask ? "newHand-task":"not-newHand-task"}>{ /*msg*/ }</span>
                                 :
                                 null
                         }
                     </div>
                     <div className="remark">{ remark }</div>
                 </div>
-                <img src={ imgUrl }/>
+              	<div className="is-get">已领取</div>
             </div>
         )
     }

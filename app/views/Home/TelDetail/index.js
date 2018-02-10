@@ -23,11 +23,15 @@ export default class TelDetail extends React.Component {
         return (
             <Container>
                 <div className="tel-detail">
+                	{/*<div className="add-border">
+                    </div>*/}
                     <AppBar title="手机认证" backward />
+                    <div className="add-border">
                     <InfoItem label="手机号" value={ <span className="tel" onClick={ e => {
                         e && e.preventDefault();
                         e && e.stopPropagation();
                     } }>{splitTel(this.state.tel)}</span> }/>
+                    </div>
                     <div className="tip">您已经成功绑定手机号</div>
                 </div>
             </Container>

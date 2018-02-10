@@ -160,6 +160,33 @@ export const GET_INCOME_LIMIT = {
     "func":"getUserFundInOutLimitInfo",
     "cmd":"user"
 };
+
+//我的
+export const MY= {
+    "func":"getUserHomePage",
+    "cmd":"user"
+};
+//获取昵称和头像
+export const NICK_HEAD= {
+    "func":"getUserInfo",
+    "cmd":"user"
+};
+//修改昵称
+export const MODIFY_NICK_NAME= {
+    "func":"updateUserInfo",
+    "cmd":"user"
+};
+//修改密码
+export const MODIFY_PASSWORD= {
+    "func":"updUserLoginPassword",
+    "cmd":"user"
+};
+//资金明细
+export const MONEY_DETAIL= {
+    "func":"followList",
+    "cmd":"fund"
+};
+
 /*export const token = "44f69756aa3acc956626b6f57e8a60f45592028bb4cf10a30dc44" +
  "dd6db79759fa20ff297d8a7c31f037f4d3731" +
  "31020a08a1421740afdb3a7f3c7a60862e2aa0";*/
@@ -221,6 +248,8 @@ export default {
                         } else if (data.code === AJAX_DAY_TIMES_LIMITED ){
                             return error("您今日充值次数已到达上限，请明天再来");
                         } else {
+                        	console.log(data)
+//                      	cb(data);
                             return error(`${data.msg}`);
                         }
                     }

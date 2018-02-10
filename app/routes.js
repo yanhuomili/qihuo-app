@@ -74,6 +74,9 @@ export default {
         { path:'risk_evaluate',component:load('RiskEvaluate') },//风险测评
         { path:'open_account_doc',component:load('OpenAccountDoc') },//开户文档
         { path:'gold_ten',component:load('GoldTen') },//金十数据
+        { path:'identification',component:load('Identification') },//认证信息
+        { path:'my_info',component:load('Home/MyInfo') },//个人资料
+        
 
     ]
 }

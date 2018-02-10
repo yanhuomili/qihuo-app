@@ -22,9 +22,26 @@
     }
   }
   .about-list {
-    background: @about-background;
+    background: #FFF;
     padding: 0 1rem;
+    .right-tip{
+        width: 100%;
+        position: relative;
+        &:after{
+            content: "";
+            width: 10px;
+            height: 10px;
+            border: 1px solid transparent;
+            border-bottom-color: #ccc;
+            border-right-color: #ccc;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
   }
+  
   .about-describe {
     text-align: center;
     color: @about-describe-color;

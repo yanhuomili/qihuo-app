@@ -36,11 +36,12 @@ export default class About extends React.Component {
         let query = parse(this.props.location.search);
         return (
             <Container>
-                <AppBar title="关于我们" backward={ backToApp } />
+            {/*backward={ backToApp }*/}
+                <AppBar title="关于我们" backward/>
                 <div className="about">
                     <div className="about-list">
-                        <List label="服务条款" fnClick={ this.service.bind(this) }/>
-                        <List label="风险披露" fnClick={ this.risk.bind(this) }/>
+                        <div className="right-tip"><List label="服务条款" fnClick={ this.service.bind(this) }/></div>
+                        <div className="right-tip"><List label="风险披露" fnClick={ this.risk.bind(this) }/></div>
                     </div>
                 </div>
             </Container>

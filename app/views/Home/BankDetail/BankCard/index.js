@@ -32,9 +32,9 @@ export default class BankCard extends React.Component {
             <div className={"bankcard "+(data.cardBackground=="B"?"bg3":(data.cardBackground=="G"?"bg2":"bg1"))}>
                 <div>
                     <img src={ protocolTransfer(data.pic) }/>
-                    <div>
-                        <div>{ data.bankName || "--" }</div>
-                        <div>储蓄卡</div>
+                    <div className="card-name">
+                        <span>{ data.bankName || "--" }</span>
+                        <i>储蓄卡</i>
                     </div>
                     {
                         data.isDefault=="1" ?
@@ -44,7 +44,7 @@ export default class BankCard extends React.Component {
                     }
 
                 </div>
-                <div className="card-num">{ `*** **** **** ${data.num.substring(data.num.length-4,data.num.length)}` }</div>
+                <div className="card-num">{ `${data.num.substring(0,4)} **** **** ${data.num.substring(data.num.length-4,data.num.length)}` }</div>
             </div>
         )
     }

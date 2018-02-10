@@ -1,0 +1,84 @@
+.account-center{
+    background: #fff;
+    color: #333;
+    .add-border{
+        border-bottom: 1px solid #ccc;
+    }
+  .top{
+    
+    p{
+      text-align: center;
+      color: #fff;
+      margin: 0;
+    }
+    .num-text{
+      color: #dbdede;
+      margin: .4rem 0 .1rem;
+      font-size: .5rem;
+    }
+    .num{
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+    }
+    .in-out{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: inline-block;
+        position: relative;
+        width: 50%;
+        text-align: center;
+        margin-bottom: 1rem;
+        img{
+          width: 1.4rem;
+        }
+        p{
+          font-size: .8rem;
+//        margin: .1rem;
+        }
+      }
+      > div:first-child:after{
+        content:'';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        border-left: 1px solid #cbcbcb;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+  .bot{
+    overflow: hidden;
+    background: url('./images/acc_bg.png') no-repeat;
+    background-size: cover;
+    .user-head{
+        width: 100%;
+        color: #fff;
+        dt{
+            width: 100%;
+            img{
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        dd{
+            width: 100%;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    }
+  }
+  .items{
+    color: #333;
+    padding: .5rem 0;
+  }
+}

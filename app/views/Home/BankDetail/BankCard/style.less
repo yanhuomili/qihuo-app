@@ -2,6 +2,19 @@
   color: #fff;
   border-radius: .8rem;
   padding: .8rem .6rem;
+  .card-name{
+      overflow: hidden;
+      line-height: 32px;
+      
+      span{
+          font-size: 14px;
+      }
+      i{
+          font-style: normal;
+          margin-left: .5rem;
+          
+      }
+  }
   > div:first-child{
     position: relative;
     img{
@@ -29,25 +42,35 @@
     }
   }
   .card-num{
-    text-align: right;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     margin-top: .4rem;
   }
 }
 .bankcard.bg1{
-  background: -webkit-linear-gradient(left bottom, #d83c58 , #e86d78);
+    background: rgba(241,99,121,.8);
+  
+}
+.bankcard.bg2{
+    background: rgba(84,171,148,.8);
+  
+}
+.bankcard.bg3{
+    background: rgba(73,147,212,.8);
+}
+.b1{
+    background: -webkit-linear-gradient(left bottom, #d83c58 , #e86d78);
   background: -o-linear-gradient(top right, #d83c58, #e86d78);
   background: -moz-linear-gradient(top right, #d83c58, #e86d78);
   background: linear-gradient(to top right, #d83c58 , #e86d78);
 }
-.bankcard.bg2{
-  background: -webkit-linear-gradient(left bottom, #268f7f , #59ab95);
+.b2{
+   background: -webkit-linear-gradient(left bottom, #268f7f , #59ab95);
   background: -o-linear-gradient(top right, #268f7f, #59ab95);
   background: -moz-linear-gradient(top right, #268f7f, #59ab95);
   background: linear-gradient(to top right, #268f7f , #59ab95);
 }
-.bankcard.bg3{
-  background: -webkit-linear-gradient(left bottom, #00418f , #234d9d);
+.b3{
+   background: -webkit-linear-gradient(left bottom, #00418f , #234d9d);
   background: -o-linear-gradient(top right, #00418f, #234d9d);
   background: -moz-linear-gradient(top right, #00418f, #234d9d);
   background: linear-gradient(to top right, #00418f , #234d9d);

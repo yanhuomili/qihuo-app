@@ -24,12 +24,15 @@ export default class BankDetail extends React.Component {
         return (
             <Container>
                 <div className="bank-detail">
-                    <AppBar title="银行卡" backward rightBar={
-                        {
-                            icon: 'add',
-                            fnClick: ()=>redirect('/bankcard_add')
-                        }
-                    }/>
+                	{/*<div  className="add-border">
+                	</div>*/}
+	                    <AppBar title="银行卡" backward rightBar={
+	                        {
+	                            icon: 'add',
+	                            fnClick: ()=>redirect('/bankcard_add')
+	                        }
+	                    }/>
+                    
                     <div className="cards">
                         {
                             //遍历生成每个银行卡

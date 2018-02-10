@@ -4,13 +4,18 @@
   padding:.5rem;
   .cash-fund{
     margin-top:.5rem;
+    .label{
+        color:#c5c5c5;
+        margin: .5rem 0 ;
+        .my-rank{
+            margin-left: .5rem;
+        } 
+    }
+    
     .cash-fund-left{
       float:left;
-      .label{
-        color:#999;
-      }
       .num{
-        line-height:2rem;
+        line-height:1.5rem;
         font-size:1.2rem;
         color:#e7410b;
       }
@@ -19,8 +24,8 @@
       float:right;
       .button{
         border-radius:.1rem;
-        background:@color-red;
-        line-height:2rem;
+        background:#2f8ee1;
+        line-height:1.5rem;
         padding:0 1.2rem;
         &.disabled{
          background:#999;
@@ -34,8 +39,8 @@
   }
   .list-container{
     margin-top:.5rem;
-    border-top:1px solid @border-color;
-    border-bottom:1px solid @border-color;
+    border-top:1px solid #d8d8d8;
+    border-bottom:1px solid #d8d8d8;
     padding:.5rem 0;
     display:flex;
     display:-webkit-box;
@@ -46,7 +51,7 @@
       width:1%;
       text-align:center;
       line-height:1.5rem;
-      border-right:1px solid @border-color;
+      border-right:1px solid #d8d8d8;
       &:last-child{
         border-right:none;
       }

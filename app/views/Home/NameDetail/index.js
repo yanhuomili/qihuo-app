@@ -26,6 +26,8 @@ export default class NameDetail extends React.Component {
         return (
             <Container>
                 <div className="name-detail">
+                    {/*<div className="add-border">
+                    </div>*/}
                     <AppBar title="实名认证" backward />
                     <InfoItem label="姓名" value={ name } border={ true }/>
                     <InfoItem label="身份证号" value={ splitIdCardNum(idCard) }/>

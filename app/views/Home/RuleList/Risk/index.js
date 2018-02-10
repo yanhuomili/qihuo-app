@@ -4,9 +4,19 @@ import Container from 'components/Container';
 import '../rule.less';
 export default class Risk extends React.Component {
     render(){
+    	let br={
+    		borderBottomWidth:1,
+    		borderBottomColor:'#eee',
+    		borderBottomStyle:'solid',
+    		overflow:'hidden',
+    		width:'100%',
+    		position:'fixed',
+    		top:0,
+    		left:0
+    	}
         return (
             <Container className="rule-container">
-                <AppBar title="协议" backward fixed/>
+                <div style={br}><AppBar title="协议" backward fixed/></div>
                 <div className="rule-doc">
                     <div>
                         <h2>《风险告知书》</h2>

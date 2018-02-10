@@ -93,6 +93,7 @@ export default class AddBankcard extends React.Component {
         //银行列表
         Api.fetch(BANK_LIST, {}, (data) => {
             let arr = [];
+            console.log(data)
             data.map((item) => {
                 arr.push({
                     text: item.bankName,
@@ -108,12 +109,16 @@ export default class AddBankcard extends React.Component {
         const {selectedBank}= this.state;
         return (
             <Container>
+                {/*<div className="add-bottom">
+                </div>*/}
                 <AppBar title="添加银行卡" backward fixed />
+                
                 <div className="add-bankcard">
                     <div className="info">
                         <div className="tip">添加您的入金银行卡信息</div>
                         <div className="name">
-                            请填写与<span>{ this.state.userName || "--" }</span>信息一致的储蓄卡
+                        	<span>银行卡信息与您的实名认证信息保持一致</span>
+                           {/* 请填写与<span>{ this.state.userName || "--" }</span>信息一致的储蓄卡*/}
                         </div>
                         <div className="infoItem">
                             <div className="label">请选择银行</div>
@@ -169,7 +174,7 @@ export default class AddBankcard extends React.Component {
                                     }} className="view-bankcard">查看银行卡列表</div>
                             )
                     }
-                    <Button text="添加"
+                    <Button text="确定"
                             disabled={!(this.state.selectedBank && this.state.num) }
                             onClick={ this.add.bind(this) }/>
                 </div>

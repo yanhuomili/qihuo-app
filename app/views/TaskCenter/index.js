@@ -32,7 +32,8 @@ export default class TaskCenter extends React.Component {
         return (
             <Container>
                 <div className="task-center">
-                    <AppBar title="任务中心" backward={ backToApp } fixed/>
+                	{"backward={ backToApp }"}
+                    <AppBar title="任务中心" backward fixed/>
                     <img src={ TaskImg }/>
                     <TaskItem title="初入江湖"
                               msg="新手任务"

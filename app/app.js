@@ -70,3 +70,4 @@ class MainApp extends React.Component {
 }
 
 ReactDOM.render(<MainApp />, document.getElementById("app"));
+///////////这是跟组件
