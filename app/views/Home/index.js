@@ -22,6 +22,7 @@ import picRenwu from './images/my-renwu.png';
 import picAbout from './images/my-about.png';
 import picTuiguangma from './images/my-tuiguangma.png';
 import picServer from './images/my-server.png';
+import userHeadImg from './images/user-head-img.png';
 
 
 import { openWithDraw,backToApp,redirect,sliceNumber } from 'lib/utils';
@@ -121,7 +122,7 @@ export class Home extends React.Component {
                         <div className="bot">
                         	<dl className="user-head">
                         		<dt onClick={this.personal}>
-                        		{<img className="user-head-img" src={this.state.headPic} alt="用户头像"/>}
+                        		{<img className="user-head-img" src={userHeadImg} alt="用户头像"/>}
                         			
                         		</dt>
                         		<dd>{this.state.nickName}</dd>

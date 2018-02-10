@@ -10,8 +10,7 @@ import Session from 'lib/session';
 import $ from 'jquery';
 import qr from 'qr-image';//生成二维码
 import svgpath from 'svgpath';
-
-
+import userHeadImg from '../images/user-head-img.png';
 
 
 export default class MyInfo extends React.Component {
@@ -184,6 +183,7 @@ export default class MyInfo extends React.Component {
                 <AppBar title="个人资料" backward />
                 <div className="my-head-img">
                 	<p  onClick={this.uploadPic} className="img-box">
+                		<img src={userHeadImg}/>
                 	</p>
                 	<span>上传头像</span>
                 </div>
