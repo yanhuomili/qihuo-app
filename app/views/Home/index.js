@@ -31,6 +31,11 @@ import * as actionCreators from '../Income/actions';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import $ from 'jquery';
+
+import qr from 'qr-image';//生成二维码
+import svgpath from 'svgpath';
+
+
 export class Home extends React.Component {
     constructor(){
         super();
@@ -38,7 +43,9 @@ export class Home extends React.Component {
             data: {},
             arr:[],
             nickName:'',
-            headPic:''
+            headPic:'',
+            showQrCode:false,
+            path:''
             
         }
     }
@@ -70,6 +77,20 @@ export class Home extends React.Component {
     guanyu(){
     	redirect('/about');
     }
+    //生成二维码
+	getCode(){//点击生成二维码
+		this.setState({showQrCode:true})
+	   	const originPath = qr.svgObject('http://www.huya.com/g/lol').path;
+	   	const scaledPath = svgpath(originPath).scale(5, 5).toString();//将二维码放大
+	   	this.setState({path: scaledPath});
+	}
+	//隐藏二维码
+	hideQrCode(){
+		this.setState({
+			showQrCode:false
+		})
+	}
+    
     componentWillMount(){
         //路径参数
         const param = parse(this.props.location.search);//将地址栏信息转成对象方便获取字段
@@ -107,6 +128,7 @@ export class Home extends React.Component {
     }
     render() {
         const data = this.state.data;
+        const {showQrCode}=this.state;
         return (
             <Container>
                 <div className="account-center">
@@ -190,7 +212,7 @@ export class Home extends React.Component {
                     			<span>关于我们</span>
                     		</p>
                     	</dt>
-                    	<dt>
+                    	<dt onClick={this.getCode.bind(this)}>
                     		<p>
                     			<img src={picTuiguangma}/>
                     			<span>我的推广码</span>
@@ -207,6 +229,13 @@ export class Home extends React.Component {
                         <ListItem img={ ListImg4 } label="法律条款" value="已签署" url='/rule_list' />
                     </div>*/}
                 </div>
+                {showQrCode?<div onClick={this.hideQrCode.bind(this)} className="qr-code-wrap">
+                	{showQrCode?<div className="qrCode">
+				        <svg width="150" height="150" ref={(ref)=>this._qrcodeSVG = ref} transform="scale(1.5)">
+				          <path d={this.state.path?this.state.path:null}/>
+				        </svg>
+			      	</div>:<div>暂无二维码</div>}
+		      	</div>:null}
             </Container>
         )
     }

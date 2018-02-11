@@ -5,6 +5,8 @@ import BankCard from './BankCard';
 import { redirect } from 'lib/utils';
 import Api,{ ACCOUNT_CARDS } from 'lib/api';
 import './style.less';
+
+import picAddBack from './images/add-bank.png'
 export default class BankDetail extends React.Component {
     constructor(){
         super();
@@ -20,6 +22,12 @@ export default class BankDetail extends React.Component {
             this.setState({cards:data});
         });
     }
+    goAddCard(){
+    	redirect('/bankcard_add');
+    }
+    gold(){
+    	redirect('/gold_ten');
+    }
     render(){
         return (
             <Container>
@@ -28,8 +36,8 @@ export default class BankDetail extends React.Component {
                 	</div>*/}
 	                    <AppBar title="银行卡" backward rightBar={
 	                        {
-	                            icon: 'add',
-	                            fnClick: ()=>redirect('/bankcard_add')
+	                            /*icon: 'add',
+	                            fnClick: ()=>redirect('/bankcard_add')*/
 	                        }
 	                    }/>
                     
@@ -40,6 +48,12 @@ export default class BankDetail extends React.Component {
                                 return <BankCard data={ item } key={ index } getData={ this.getData.bind(this) }/>
                             })
                         }
+                    </div>
+                    <div className="addCard-wrap">
+                    	<div onClick={this.goAddCard} className="addCard">
+	                    	<img src={picAddBack}/>
+	                    	<span>添加银行卡</span>
+	                    </div>
                     </div>
                     <div className="tip">您最多可以绑定三张银行卡，如需更换其他银行卡请先删除或解绑！</div>
                 </div>

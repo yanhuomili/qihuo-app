@@ -56,7 +56,7 @@ export class Home extends React.Component {
                     	{/*backward={ backToApp }rightBar={
 	                            { icon:"detail", text:"明细" }
 	                        }*/}
-	                        <AppBar title="我的" backward/>
+	                        <AppBar title="认证信息" backward/>
                         
                         {/*<div className="bot">
                         	<p className="num-text">余额</p>

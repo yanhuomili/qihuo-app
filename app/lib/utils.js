@@ -191,6 +191,16 @@ export const openWithDraw = () => {
     }
 };
 
+//跳到实名认证
+export const Certification  = () => {
+    if (isiOS) {
+        window.location.href = "http://www.baidu.com";
+    } else {
+        window.AppJs && window.AppJs.gotoHall()
+    }
+};
+
+
 //跳转到服务大厅
 export const openHall = () => {
     if (isiOS) {
