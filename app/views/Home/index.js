@@ -108,7 +108,6 @@ export class Home extends React.Component {
 
 		//获取头像和昵称
 		Api.fetch(NICK_HEAD,{fundType:0},(data,res)=>{
-        	console.log(data,res);
         	this.setState({
         		nickName:data.nickName,
         		headPic:data.headPic
@@ -118,13 +117,10 @@ export class Home extends React.Component {
 		
 		//美元积分和美元
         Api.fetch(MY,{},(data,res)=>{
-        	console.log(data)
-        	console.log(res)
         	this.setState({
         		arr:data
         	})
         });
-        console.log(999)
     }
     render() {
         const data = this.state.data;
@@ -133,7 +129,8 @@ export class Home extends React.Component {
             <Container>
                 <div className="account-center">
                     <div className="top">
-                        <AppBar title="我的" backward={ backToApp } rightBar={
+                   {/* backward={ backToApp }*/}
+                        <AppBar title="我的"  rightBar={
                             { /*icon:"detail", text:"明细",fnClick:()=>redirect('/fund_detail')*/ }
                         }
                         />

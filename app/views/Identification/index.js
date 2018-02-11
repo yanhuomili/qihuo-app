@@ -19,7 +19,7 @@ import ListImg3 from './images/yinhang.png';
 import ListImg4 from './images/falv.png';
 
 
-import { openWithDraw,backToApp,redirect,sliceNumber } from 'lib/utils';
+import { openWithDraw,backToApp,redirect,sliceNumber,Certification } from 'lib/utils';
 import Api,{ ACCOUNT_INFO } from 'lib/api';
 import * as actionCreators from '../Income/actions';
 import {bindActionCreators} from 'redux';
@@ -30,6 +30,10 @@ export class Home extends React.Component {
         this.state = {
             data: {},
         }
+    }
+    //跳到实名认证
+    goCertification(){
+    	Certification()
     }
     componentWillMount(){
         //路径参数
@@ -79,6 +83,7 @@ export class Home extends React.Component {
                         <ListItem img={ ListImg3 } label="银行卡号" value="已认证" url='/bank_detail' />
                         <ListItem img={ ListImg4 } label="法律条款" value="已签署" url='/rule_list' />
                     </div>
+                   {/* <div onClick={this.goCertification}>跳到百度</div>*/}
                 </div>
             </Container>
         )

@@ -25,7 +25,6 @@ export default class FundDetail extends React.Component {
     }
     componentWillMount(){
         this.getData();
-        console.log(this.state.showIndex);
        //获取金币明细
       	this.getGold();
         
@@ -35,7 +34,6 @@ export default class FundDetail extends React.Component {
         const { page,rows } = this.state;
         Api.fetch(FUND_DETAIL,{fundType:1,page:page,rows:rows},(data)=>{
             let arr = this.state.data;
-            console.log(data)
             data.map((item)=>{
                 arr.push(item);
             })
@@ -63,23 +61,17 @@ export default class FundDetail extends React.Component {
         	this.setState({
         		goldData:res.data
         	})
-        	console.log(res);
-        	console.log(this.state.goldData)
         });
     }
     //切换tab
     changeTab(event){
     	var target=event.target;
-    	console.log($(target).index())
-    	console.log(target.tagName);
     	var _this=this
     	if(target.tagName==="LI"){
     		var index=$(target).index();
-    		console.log(index);
     		_this.setState({
     			showIndex:index
     		})
-    		console.log(_this.state.showIndex)
     	}
     	
     	
